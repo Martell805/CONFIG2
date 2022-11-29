@@ -1,4 +1,5 @@
 from DepParser import DepParser
 
 if __name__ == '__main__':
-    DepParser.parse(input())  # express
+    while True:
+        DepParser.parse(input("Введите имя пакета: "))  # express

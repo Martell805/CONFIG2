@@ -1,11 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
-from functools import cache
 
 
 class DepParser:
     @staticmethod
-    @cache
     def __parse(package_name: str, tab_level: int = 1) -> None:
         request = requests.get(f"https://www.npmjs.com/package/{package_name}/?activeTab=dependencies").content.decode()
         soup = BeautifulSoup(request, features="lxml")
